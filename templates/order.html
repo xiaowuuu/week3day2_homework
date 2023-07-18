@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}"/>
 </head>
 <body class="order_body">
     <h1>{{ title }}</h1>
     <h3>
+        <!-- test not working -->
     <ul class="order_list">{% for order in order_list %}
+        {% bloock title%} Customer Order {% endblock%}
+        {% block content %}
         <li><b>{{ order.customer_name}}</b> ordered {{ order.quantity }} {{ order.item }}</li>
-        <li>{{ order.additional_request }}</li>
-        <li>Date: {{ order.order_date }}</li>
+        {% endblock %}
+        
     {% endfor %}</ul>
     </h3>
 </body>

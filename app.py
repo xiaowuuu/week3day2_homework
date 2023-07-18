@@ -8,6 +8,8 @@ app.register_blueprint(orders_blueprint)
 def index():
     return "Welcome to the order list"
 
-# @app.route('/order/<index>', methods=['GET'])
-# def get_order(index):
-#     return f"Displaying order with index: {index}."
+
+
+@app.route("/<int:id>", methods=["GET"])
+def get_id(id):
+    return f"the id is {id}"
