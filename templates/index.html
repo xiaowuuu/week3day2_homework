@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ customer_name }}</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="order-body">
+    <h1>{{ customer_name }}</h1>
+    <h3>
+    <ul class="list">{% for order in order_list %}
+        <li><b>{{ order.customer_name}}</b> ordered {{ order.quantity }} {{ order.item }}</li>
+        <li>{{ order.additional_request }}</li>
+        <li>Date: {{ order.order_date }}</li>
+    {% endfor %}</ul>
+    </h3>
+</body>
+</html>
